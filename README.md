@@ -179,7 +179,7 @@ If you want to install MySQL from the official repository instead of installing 
       when: ansible_os_family == "RedHat"
   
     - name: Override variables for MySQL (RedHat).
-      set_fact:
+      ansible.builtin.set_fact:
         mysql_daemon: mysqld
         mysql_packages: ['mysql-server']
         mysql_log_error: /var/log/mysqld.err
