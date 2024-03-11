@@ -14,6 +14,7 @@
     mode: 0644
     force: "{{ overwrite_global_mycnf }}"
   notify: restart mysql
+  when: not 'mariadb_server' in group_names
 
 - name: Verify mysql include directory exists.
   ansible.builtin.file:
@@ -27,7 +28,7 @@
 - name: Copy my.cnf override files into include directory.
   ansible.builtin.template:
     src: "{{ item.src }}"
-    dest: "{{ mysql_config_include_dir }}/{{ item.src | basename }}"
+    dest: "{{ mysql_config_include_dir }}/{{ item.src | regex_replace('.j2$','') | basename }}"
     owner: root
     group: root
     mode: 0644
