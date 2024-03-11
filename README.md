@@ -195,7 +195,7 @@ This role works with either MySQL or a compatible version of MariaDB. On RHEL/Ce
 
 #### Ubuntu 14.04 and 16.04 MariaDB configuration
 
-On Ubuntu, the package names are named differently, so the `mysql_package` variable needs to be altered. Set the following variables (at a minimum):
+On Ubuntu, the package names are named differently, so the `mysql_packages` variable needs to be altered. Set the following variables (at a minimum):
 
     mysql_packages:
       - mariadb-client
