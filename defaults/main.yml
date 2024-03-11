@@ -120,6 +120,7 @@ mysql_users: []
 #     priv: *.*:USAGE
 
 mysql_disable_log_bin: false
+mysql_secure_install: true
 
 # Replication settings (replication is only enabled if master/user have values).
 mysql_server_id: "1"
